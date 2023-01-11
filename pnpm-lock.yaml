@@ -6,7 +6,7 @@ specifiers:
   '@box-extractor/vanilla-theme': 0.2.7
   '@types/react': ^18.0.15
   '@types/react-dom': ^18.0.6
-  '@vanilla-extract/css': https://github.com/astahmer/box-extractor/raw/main/packages/vanilla-extract/ve-fork-tgz/vanilla-extract-css.tgz
+  '@vanilla-extract/css': file:./vanilla-extract-css.tgz
   '@vanilla-extract/sprinkles': ^1.5.1
   '@vanilla-extract/vite-plugin': ^3.7.0
   '@vitejs/plugin-react': ^2.0.0
@@ -20,7 +20,7 @@ dependencies:
   '@box-extractor/core': 0.3.0_spixitih4mm42xcpaw7tgpwcwa
   '@box-extractor/vanilla-extract': 0.2.6_7ysqeesbdx5ab2mb7tjfnnsepq
   '@box-extractor/vanilla-theme': 0.2.7_225hxfj6s7njsjatjyrstn3pbi
-  '@vanilla-extract/css': '@github.com/astahmer/box-extractor/raw/main/packages/vanilla-extract/ve-fork-tgz/vanilla-extract-css.tgz'
+  '@vanilla-extract/css': file:vanilla-extract-css.tgz
   '@vanilla-extract/sprinkles': 1.5.1_@vanilla-extract+css@1.9.2
   '@vanilla-extract/vite-plugin': 3.7.0_vite@3.2.5
   react: 18.2.0
@@ -334,7 +334,7 @@ packages:
     dependencies:
       '@box-extractor/core': 0.3.0_spixitih4mm42xcpaw7tgpwcwa
       '@box-extractor/logger': 0.0.3
-      '@vanilla-extract/css': '@github.com/astahmer/box-extractor/raw/main/packages/vanilla-extract/ve-fork-tgz/vanilla-extract-css.tgz'
+      '@vanilla-extract/css': file:vanilla-extract-css.tgz
       '@vanilla-extract/esbuild-plugin': '@github.com/astahmer/box-extractor/raw/main/packages/vanilla-extract/ve-fork-tgz/vanilla-extract-esbuild-plugin.tgz'
       '@vanilla-extract/integration': '@github.com/astahmer/box-extractor/raw/main/packages/vanilla-extract/ve-fork-tgz/vanilla-extract-integration.tgz'
       '@vanilla-extract/sprinkles': '@github.com/astahmer/box-extractor/raw/main/packages/vanilla-extract/ve-fork-tgz/vanilla-extract-sprinkles.tgz_@vanilla-extract+css@1.9.2'
@@ -362,7 +362,7 @@ packages:
       '@vanilla-extract/sprinkles': '>= 1.5'
     dependencies:
       '@box-extractor/vanilla-extract': 0.2.6_7ysqeesbdx5ab2mb7tjfnnsepq
-      '@vanilla-extract/css': '@github.com/astahmer/box-extractor/raw/main/packages/vanilla-extract/ve-fork-tgz/vanilla-extract-css.tgz'
+      '@vanilla-extract/css': file:vanilla-extract-css.tgz
       '@vanilla-extract/esbuild-plugin': 2.2.0
       '@vanilla-extract/sprinkles': 1.5.1_@vanilla-extract+css@1.9.2
     transitivePeerDependencies:
@@ -745,7 +745,7 @@ packages:
     peerDependencies:
       '@vanilla-extract/css': ^1.0.0
     dependencies:
-      '@vanilla-extract/css': '@github.com/astahmer/box-extractor/raw/main/packages/vanilla-extract/ve-fork-tgz/vanilla-extract-css.tgz'
+      '@vanilla-extract/css': file:vanilla-extract-css.tgz
     dev: false
 
   /@vanilla-extract/vite-plugin/3.7.0_vite@3.2.5:
@@ -1669,24 +1669,6 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  '@github.com/astahmer/box-extractor/raw/main/packages/vanilla-extract/ve-fork-tgz/vanilla-extract-css.tgz':
-    resolution: {tarball: https://github.com/astahmer/box-extractor/raw/main/packages/vanilla-extract/ve-fork-tgz/vanilla-extract-css.tgz}
-    name: '@vanilla-extract/css'
-    version: 1.9.2
-    dependencies:
-      '@emotion/hash': 0.9.0
-      '@vanilla-extract/private': 1.0.3
-      ahocorasick: 1.0.2
-      chalk: 4.1.2
-      css-what: 5.1.0
-      cssesc: 3.0.0
-      csstype: 3.1.1
-      deep-object-diff: 1.1.9
-      deepmerge: 4.2.2
-      media-query-parser: 2.0.2
-      outdent: 0.8.0
-    dev: false
-
   '@github.com/astahmer/box-extractor/raw/main/packages/vanilla-extract/ve-fork-tgz/vanilla-extract-esbuild-plugin.tgz':
     resolution: {tarball: https://github.com/astahmer/box-extractor/raw/main/packages/vanilla-extract/ve-fork-tgz/vanilla-extract-esbuild-plugin.tgz}
     name: '@vanilla-extract/esbuild-plugin'
@@ -1724,7 +1706,7 @@ packages:
     peerDependencies:
       '@vanilla-extract/css': ^1.0.0
     dependencies:
-      '@vanilla-extract/css': '@github.com/astahmer/box-extractor/raw/main/packages/vanilla-extract/ve-fork-tgz/vanilla-extract-css.tgz'
+      '@vanilla-extract/css': file:vanilla-extract-css.tgz
     dev: false
 
   '@github.com/astahmer/box-extractor/raw/main/packages/vanilla-extract/ve-fork-tgz/vanilla-extract-vite-plugin.tgz_vite@3.2.5':
@@ -1743,4 +1725,22 @@ packages:
     transitivePeerDependencies:
       - supports-color
       - ts-node
+    dev: false
+
+  file:vanilla-extract-css.tgz:
+    resolution: {integrity: sha512-PHpeevoJcVeb+qWkGWO77UjoTv4W7YQ8WpQwEV9D/7YC2DmldMihmsCTGUyahk1bVW78GbBAEUrpjUGQs/ICHQ==, tarball: file:vanilla-extract-css.tgz}
+    name: '@vanilla-extract/css'
+    version: 1.9.2
+    dependencies:
+      '@emotion/hash': 0.9.0
+      '@vanilla-extract/private': 1.0.3
+      ahocorasick: 1.0.2
+      chalk: 4.1.2
+      css-what: 5.1.0
+      cssesc: 3.0.0
+      csstype: 3.1.1
+      deep-object-diff: 1.1.9
+      deepmerge: 4.2.2
+      media-query-parser: 2.0.2
+      outdent: 0.8.0
     dev: false
