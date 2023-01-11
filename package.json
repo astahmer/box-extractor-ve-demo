@@ -10,8 +10,8 @@
     "scripts": {
         "dev": "vite",
         "dev:without": "vite --config=./vite.config.without-box-extractor.ts",
-        "build:with-box-extractor": "echo 'Running vite build WITH ✅  @box-extractor/vanilla-extract optimizations...\n' && vite build && echo '\n-----------------------'",
-        "build:without-box-extractor": "echo 'Running vite build WITHOUT ❌ @box-extractor/vanilla-extract optimizations...\n' && vite --config=./vite.config.without-box-extractor.ts build && echo '\n-----------------------'",
+        "build:with-box-extractor": "echo 'Running vite build WITH ✅  @box-extractor/vanilla-extract optimizations...\n' && start_time=`date +%s` && vite build && end_time=`date +%s` && echo build execution time was `expr $end_time - $start_time` s. && echo '\n-----------------------'",
+        "build:without-box-extractor": "echo 'Running vite build WITHOUT ❌ @box-extractor/vanilla-extract optimizations...\n' && start_time=`date +%s` && vite --config=./vite.config.without-box-extractor.ts build && end_time=`date +%s` && echo build execution time was `expr $end_time - $start_time` s. && echo '\n-----------------------'",
         "build": "DEBUG=box-ex:ve:result pnpm build:with-box-extractor && pnpm build:without-box-extractor",
         "preview": "vite preview",
         "format": "prettier --write \"./{src,tests}/**/*\""
