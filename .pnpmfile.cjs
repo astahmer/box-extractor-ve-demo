@@ -1,7 +1,7 @@
-const baseUrl =
-    "https://github.com/astahmer/box-extractor/raw/main/packages/vanilla-extract/ve-fork-tgz/vanilla-extract-";
+const path = require("path");
+const basePath = "ve-fork-tgz/vanilla-extract-";
 
-console.log(".pnpmfile.cjs: baseUrl", baseUrl);
+console.log(".pnpmfile.cjs: basePath", basePath);
 function readPackage(pkg, context) {
     // Override the manifest of @box-extractor/vanilla-extract" after downloading it from the registry
     if (pkg.name === "@box-extractor/vanilla-extract") {
@@ -9,7 +9,7 @@ function readPackage(pkg, context) {
         Object.entries(pkg.dependencies).forEach(([key, value]) => {
             if (value.includes("link:")) {
                 const packageName = key.split("/").pop();
-                pkg.dependencies[key] = baseUrl + packageName + ".tgz";
+                pkg.dependencies[key] = path.resolve(basePath + packageName + ".tgz");
                 context.log(`[${key}]: Replaced with ${pkg.dependencies[key]}}`);
             }
         });
@@ -18,7 +18,7 @@ function readPackage(pkg, context) {
     if (pkg.name === "@vanilla-extract/vite-plugin" || pkg.name === "@vanilla-extract/esbuild-plugin") {
         context.log(`[${pkg.name}]: Replacing @vanilla-extract/integration with local version`);
 
-        pkg.dependencies["@vanilla-extract/integration"] = baseUrl + "integration.tgz";
+        pkg.dependencies["@vanilla-extract/integration"] = path.resolve(basePath + "integration.tgz");
     }
 
     return pkg;

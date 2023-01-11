@@ -23,7 +23,7 @@
         "@box-extractor/core": "0.3.0",
         "@box-extractor/vanilla-extract": "0.2.6",
         "@box-extractor/vanilla-theme": "0.2.7",
-        "@vanilla-extract/css": "file:./vanilla-extract-css.tgz",
+        "@vanilla-extract/css": "file:./ve-fork-tgz/vanilla-extract-css.tgz",
         "@vanilla-extract/sprinkles": "^1.5.1",
         "@vanilla-extract/vite-plugin": "^3.7.0",
         "react": "^18.2.0",
